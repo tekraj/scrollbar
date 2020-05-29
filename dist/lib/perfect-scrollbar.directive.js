@@ -5,7 +5,7 @@
 import PerfectScrollbar from 'perfect-scrollbar';
 import ResizeObserver from 'resize-observer-polyfill';
 import { Subject, fromEvent } from 'rxjs';
-import { auditTime, takeUntil } from 'rxjs/operators';
+import { takeUntil, debounceTime } from 'rxjs/operators';
 import { PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { NgZone, Inject, Optional, ElementRef, Directive, Input, Output, EventEmitter, KeyValueDiffers } from '@angular/core';
@@ -69,7 +69,7 @@ var PerfectScrollbarDirective = /** @class */ (function () {
                     /** @type {?} */
                     var eventType = eventName.replace(/([A-Z])/g, function (c) { return "-" + c.toLowerCase(); });
                     fromEvent(_this.elementRef.nativeElement, eventType)
-                        .pipe(auditTime(20), takeUntil(_this.ngDestroy))
+                        .pipe(debounceTime(20), takeUntil(_this.ngDestroy))
                         .subscribe(function (event) {
                         _this[eventName].emit(event);
                     });

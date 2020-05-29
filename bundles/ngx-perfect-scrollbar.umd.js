@@ -1052,7 +1052,7 @@
                         /** @type {?} */
                         var eventType = eventName.replace(/([A-Z])/g, function (c) { return "-" + c.toLowerCase(); });
                         rxjs.fromEvent(_this.elementRef.nativeElement, eventType)
-                            .pipe(operators.auditTime(20), operators.takeUntil(_this.ngDestroy))
+                            .pipe(operators.debounceTime(20), operators.takeUntil(_this.ngDestroy))
                             .subscribe(function (event) {
                             _this[eventName].emit(event);
                         });

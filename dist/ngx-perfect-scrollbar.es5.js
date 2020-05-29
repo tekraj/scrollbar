@@ -1,5 +1,5 @@
 import { fromEvent, Subject, merge } from 'rxjs';
-import { auditTime, takeUntil, distinctUntilChanged, mapTo } from 'rxjs/operators';
+import { debounceTime, takeUntil, distinctUntilChanged, mapTo } from 'rxjs/operators';
 import { InjectionToken, Directive, NgZone, KeyValueDiffers, ElementRef, Inject, PLATFORM_ID, Optional, Input, Output, EventEmitter, Component, ViewEncapsulation, ChangeDetectorRef, HostBinding, ViewChild, NgModule } from '@angular/core';
 import { isPlatformBrowser, CommonModule } from '@angular/common';
 import PerfectScrollbar from 'perfect-scrollbar';
@@ -124,7 +124,7 @@ var PerfectScrollbarDirective = /** @class */ (function () {
                     /** @type {?} */
                     var eventType = eventName.replace(/([A-Z])/g, function (c) { return "-" + c.toLowerCase(); });
                     fromEvent(_this.elementRef.nativeElement, eventType)
-                        .pipe(auditTime(20), takeUntil(_this.ngDestroy))
+                        .pipe(debounceTime(20), takeUntil(_this.ngDestroy))
                         .subscribe(function (event) {
                         _this[eventName].emit(event);
                     });

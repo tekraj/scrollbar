@@ -1,37 +1,6 @@
 {
-  "_args": [
-    [
-      "ngx-perfect-scrollbar@7.2.1",
-      "/Users/mac/Applications/cys-app"
-    ]
-  ],
-  "_from": "ngx-perfect-scrollbar@7.2.1",
-  "_id": "ngx-perfect-scrollbar@7.2.1",
-  "_inBundle": false,
-  "_integrity": "sha512-2Dyzx2M3ihGSlcTNwb+o8XGJr4ukkeCMz9J6A0cXyL7eX1Tez6BnRqTcpKe9JWkVEdRVd8+WT0uZ2O0tMiRF3A==",
-  "_location": "/ngx-perfect-scrollbar",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "version",
-    "registry": true,
-    "raw": "ngx-perfect-scrollbar@7.2.1",
-    "name": "ngx-perfect-scrollbar",
-    "escapedName": "ngx-perfect-scrollbar",
-    "rawSpec": "7.2.1",
-    "saveSpec": null,
-    "fetchSpec": "7.2.1"
-  },
-  "_requiredBy": [
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/ngx-perfect-scrollbar/-/ngx-perfect-scrollbar-7.2.1.tgz",
-  "_spec": "7.2.1",
-  "_where": "/Users/mac/Applications/cys-app",
-  "bugs": {
-    "url": "https://github.com/zefoy/ngx-perfect-scrollbar/issues"
-  },
-  "dependencies": {
-    "perfect-scrollbar": "^1.4.0",
+   "dependencies": {
+    "perfect-scrollbar": "git+https://github.com/tekraj/perfect-scrollbar-new.git#master",
     "resize-observer-polyfill": "^1.5.0"
   },
   "description": "Angular wrapper library for Perfect Scrollbar",
@@ -61,7 +30,7 @@
     "watch": "^1.0.0",
     "zone.js": "^0.8.0"
   },
-  "homepage": "https://github.com/zefoy/ngx-perfect-scrollbar#readme",
+  "homepage": "https://github.com/tekraj/scrollbar#readme",
   "license": "MIT",
   "main": "./bundles/ngx-perfect-scrollbar.umd.js",
   "module": "./dist/ngx-perfect-scrollbar.es5.js",
@@ -73,7 +42,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zefoy/ngx-perfect-scrollbar.git"
+    "url": "git+https://github.com/tekraj/scrollbar.git"
   },
   "scripts": {
     "build": "npm run build:html && npm run build:css && npm run build:js",
